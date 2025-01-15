@@ -1,13 +1,14 @@
 "use client"
-import {Label} from "@/components/ui/Label";
-import {Input} from "@/components/ui/Input";
+import {Label} from "@/components/ui/label";
+import {Input} from "@/components/ui/input";
 import { signInDefaultValues } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { signInWithCredentails } from "@/lib/actions/user.actions";
-import { Divide } from "lucide-react";
+
+
 
 const CredentailsSignInForm = () => {
     const [data,action] = useActionState(signInWithCredentails,{
