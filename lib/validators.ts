@@ -1,5 +1,6 @@
 import {z} from "zod";
 import { formatNumberWithDecimal } from "./utils";
+import { X } from "lucide-react";
 
 const currency=z.string().refine((value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(Number(value))),
 "Price must have two decimal places");
@@ -18,4 +19,11 @@ export const insertProductSchema = z.object({
     price: currency,
 
 
+});
+
+//schema for singing users in
+export const signInFormSchema =  z.object({
+    email: z.string().email('invalid email address'),
+    password: z.string().min(6,"Password must be atleast 6 characters"),
+    
 })
